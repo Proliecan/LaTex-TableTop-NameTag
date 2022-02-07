@@ -1,0 +1,54 @@
+\documentclass[final]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{anyfontsize}
+
+\begin{document}
+    % -----
+    % Variables
+
+    % a4 width = 210mm = 21cm
+    \newcommand{\name}{\begin{minipage}{14cm}
+        Prefix\\ Name FamilyName
+    \end{minipage}}
+    \newcommand{\firma}{\includegraphics[width = 3.5cm]{Logo.pdf}}
+    \newcommand{\nametag}{
+        \fontsize{50}{60}\selectfont
+        \noindent
+        \firma
+        \hspace{.5cm}
+        \name
+        }
+        \newcommand{\foldlength}{1.5cm}
+    % -----
+    
+    % Document
+    \centering
+    
+        \newgeometry{left = 1cm, right = 1cm, top = \foldlength, bottom = \foldlength}
+    
+        \thispagestyle{empty}
+
+        \noindent
+        -\dotfill
+        \vspace{\fill}
+        
+        \hrule
+        \vspace{10pt}
+        \rotatebox{180}{\nametag}
+        \vspace{\fill}
+        \\-\dotfill
+        \vspace{\fill}
+
+        \rotatebox{0}{\nametag}
+
+        \vspace{10pt}
+        \hrule
+
+        \vspace{\fill}
+        \noindent
+        -\dotfill
+
+
+\end{document}
